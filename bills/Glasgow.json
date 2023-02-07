@@ -1,0 +1,31 @@
+{
+    "bills": [
+        {
+            "delivery": false,
+            "delivery_charge": 0,
+            "restaurant": "Old Salty's",
+            "latitude": 55.8768051,
+            "longitude": -4.2944011,
+            "date": "2022-11-12T12:34:00+00:00",
+            "tip": 0,
+            "people": 2,
+            "items": [
+                {
+                    "name": "Baked eggs al forno",
+                    "price": 7.95,
+                    "quantity": 1
+                },
+                {
+                    "name": "Eggs royale",
+                    "price": 9.95,
+                    "quantity": 1
+                },
+                {
+                    "name": "Iced latte",
+                    "price": 3.50,
+                    "quantity": 2
+                }
+            ]
+        }
+    ]
+}

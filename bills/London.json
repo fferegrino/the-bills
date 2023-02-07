@@ -1,0 +1,53 @@
+{
+    "bills": [
+        {
+            "delivery": true,
+            "delivery_charge": 1.8,
+            "restaurant": "Beirut Canteen",
+            "latitude": 51.474597,
+            "longitude": -0.0386452,
+            "date": "2023-02-07T18:46:00+00:00",
+            "tip": 0,
+            "people": 2,
+            "items": [
+                {
+                    "name": "Chicken Shawarma Wrap",
+                    "price": 9,
+                    "quantity": 1
+                },
+                {
+                    "name": "Falafel and Halloumi Wrap",
+                    "price": 8,
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "delivery": true,
+            "delivery_charge": 3,
+            "restaurant": "Pathiri Restaurant",
+            "latitude": 51.484483,
+            "longitude": -0.0001073,
+            "date": "2023-01-24T18:22:00+00:00",
+            "tip": 0,
+            "people": 2,
+            "items": [
+                {
+                    "name": "Half Nadan Chicken Fry",
+                    "price": 8.99,
+                    "quantity": 1
+                },
+                {
+                    "name": "Chicken 65",
+                    "price": 8.99,
+                    "quantity": 1
+                },
+                {
+                    "name": "Kerala Paratha",
+                    "price": 5.98,
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
+}
