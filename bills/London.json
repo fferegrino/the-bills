@@ -48,6 +48,32 @@
                     "quantity": 1
                 }
             ]
+        },
+        {
+            "restaurant": "Salt (Deptford)",
+            "latitude": 51.4780481,
+            "longitude": -0.0287925,
+            "date": "2023-02-03T20:46:00+00:00",
+            "tip": 5.88,
+            "people": 4,
+            "items": [
+                {
+                    "name": "N'duja",
+                    "price": 10.5
+                },
+                {
+                    "name": "Prosciutto Tartufa SE8",
+                    "price": 13
+                },
+                {
+                    "name": "Don't Call It The Potato",
+                    "price": 11.5
+                },
+                {
+                    "name": "Funghi",
+                    "price": 12
+                }
+            ]
         }
     ]
 }

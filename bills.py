@@ -6,13 +6,14 @@ import polars as pl
 
 bills_path = Path("bills")
 
+
 def read_bills():
     _bills = []
     for bill_file in bills_path.glob("*.json"):
         with open(bill_file) as f:
             bills = json.load(f)["bills"]
             for bill in bills:
-                bill['region'] = bill_file.stem
+                bill["region"] = bill_file.stem
                 _bills.append(bill)
     return _bills
 
@@ -23,7 +24,7 @@ def bills_to_df(bills):
         total = bill.get("tip", 0) + bill.get("delivery_charge", 0)
         bill["date"] = datetime.fromisoformat(bill["date"])
         for item in bill.pop("items"):
-            total += item["price"] * item["quantity"]
+            total += item["price"] * item.get("quantity", 1)
         bill["total"] = total
         aggregated_bills.append(bill)
 
