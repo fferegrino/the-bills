@@ -50,6 +50,19 @@
             ]
         },
         {
+            "restaurant": "Feel Greek",
+            "latitude": 51.4947453,
+            "longitude": -0.0471879,
+            "date": "2023-02-04T15:16:00+00:00",
+            "people": 2,
+            "items": [
+                {
+                    "name": "Box Meal T1",
+                    "price": 10
+                }
+            ]
+        },
+        {
             "restaurant": "Salt (Deptford)",
             "latitude": 51.4780481,
             "longitude": -0.0287925,

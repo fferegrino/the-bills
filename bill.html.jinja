@@ -1,0 +1,31 @@
+<html>
+    <head>
+    <style> 
+    p, h2 {
+  font-family: monospace;
+  line-height: 0;
+  }
+
+hr {
+  
+  border: 0.5px solid black;
+}
+    </style>
+    </head>
+    <body>
+        <h2>{{ restaurant }}</h2>
+        <p><time>{{ date }}</time></p>
+        <p>{{ separator }}</p>
+        {% for item in items %}
+        <p>{{ item }}</p>
+        {% endfor %}
+        <p>{{ separator }}</p>
+        {% if tip %}
+        <p>{{ tip }}</p>
+        {% endif %}
+        {% if delivery %}
+        <p>{{ delivery }}</p>
+        {% endif %}
+        <p>{{ total }}</p>
+    </body>
+</html>
