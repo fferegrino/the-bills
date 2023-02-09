@@ -11,11 +11,14 @@ st.set_page_config(
     page_title="The Bills",
     page_icon="🧾",
     layout="wide",
-    menu_items={
-    },
+    menu_items={},
 )
 
 bills = read_bills()
+
+# Create a dictionary using the hash as the key and the bill as the value
+bills_dict = {bill["hash"]: bill for bill in bills}
+
 df = bills_to_df(bills)
 
 
@@ -66,8 +69,56 @@ from streamlit_folium import st_folium
 # center on Liberty Bell, add marker
 m = folium.Map(location=[mean_latitudes, mean_longitudes], zoom_start=16)
 
+
+SPACE_CHAR = "-"
+
+def get_bill_popup(bill):
+    max_len_name = 0
+    max_len_price = 0
+    max_len_qty = 0
+    padding_value = 2
+
+    for item in bill["items"]:
+        qty = item.get("quantity", 1)
+        max_len_name = max(len(item["name"]), max_len_name)
+        max_len_price = max(len(str(int(item["price"] * qty))), max_len_price)
+        max_len_qty = max(len(str(qty)), max_len_qty)
+
+    line_format = (
+        f"<p>{{quantity:0{max_len_qty}}}x {{product_name}}{{spaces}}${{price:2.2f}}</p>"
+    )
+
+    lis = []
+
+    for item in bill["items"]:
+        qty = item.get("quantity", 1)
+        price = item["price"] * qty
+        spaces = (max_len_name + padding_value) - len(item['name'])
+        spaces = "".join([SPACE_CHAR for _ in range(spaces)])
+        lis.append(line_format.format(quantity=qty, product_name=item["name"], spaces=spaces, price=price))
+
+    lis = "\n".join(lis)
+    html = (
+        '<body style="font-family: monospace">'
+        + f'<h3>{bill["restaurant"]}</h3>'
+        + f'<h4>{bill["date"]}</h4>'
+        + lis
+        + f'<h4>Total: ${bill["total"]:.2f}</h4>'
+        + "</body>"
+    )
+
+    iframe = folium.IFrame(html)
+
+    return iframe
+
+
 for row in df.iter_rows(named=True):
-    folium.Marker([row["latitude"], row["longitude"]], popup=f"{row['restaurant']}", tooltip="").add_to(m)
+    bill = bills_dict[row["hash"]]
+
+    lis = get_bill_popup(bill)
+
+    popup = folium.Popup(lis, max_width=300, min_width=300)
+    folium.Marker([row["latitude"], row["longitude"]], popup=popup, tooltip=row["restaurant"]).add_to(m)
 
 m.fit_bounds([[min_lat, min_long], [max_lat, max_long]])
 
