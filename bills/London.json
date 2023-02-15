@@ -63,6 +63,53 @@
             ]
         },
         {
+            "restaurant": "Tindli by Chef Karnavar",
+            "latitude": 51.3833272,
+            "longitude": -0.1116214,
+            "date": "2023-02-11T12:32:00+00:00",
+            "tip": 0,
+            "people": 2,
+            "items":[
+                {"name": "Paani puri / Golga", "price": 6 },
+                {"name": "Travancore chicken", "price": 5},
+                {"name": "Kappa biryani", "price": 8.5},
+                {"name":"Chicken dum biryani", "price": 8.5},
+                {"name":"Gun powder fries", "price":3},
+                {"name": "Small Cobra", "price":2.90},
+                {"name": "Fresh lime soda (salty)", "price":3.5, "quantity":2}
+            ]
+        },
+        {
+            "restaurant":"Frankie & Benny's",
+            "latitude": 51.4868802,
+            "longitude": 0.0177299,
+            "date": "2023-02-05T14:24:00+00:00",
+            "tip": 3,
+            "people": 2,
+            "items":[
+                {
+                    "name": "Ice Cream Shakes",
+                    "price": 4.5
+                },
+                {
+                    "name": "Budwiser",
+                    "price": 5.30
+                },
+                {
+                    "name": "Calamari",
+                    "price": 7.60
+                },
+                {
+                    "name": "Side fries",
+                    "price": 4
+                },
+                {
+                    "name": "Classic Dog",
+                    "price": 10.90
+                }
+            ]
+        },
+        {
             "restaurant": "Salt (Deptford)",
             "latitude": 51.4780481,
             "longitude": -0.0287925,
